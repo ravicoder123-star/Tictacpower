@@ -1,10 +1,16 @@
 {
+  "id":"/",
+  "description":" Tic Tac Toe Game powered by PWA and GitHub Pages",
   "name": "Tic Tac Enhanced",
   "short_name": "TicTacToe",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#4A90E2",
+  "orientation": "portrait",
+  "scope": ".",
+  "categories": ["games", "fun"],
+  "screenshots": [],
   "icons": [
     {
       "src": "icon-192.png",
