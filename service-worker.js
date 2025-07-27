@@ -1,21 +1,26 @@
-self.addEventListener('install', function(e) {
-  e.waitUntil(
-    caches.open('tic-tac-cache').then(function(cache) {
-      return cache.addAll([
-        '/',
-        '/index.html',
-        '/icon-192.png',
-        '/icon-512.png',
-        '/manifest.json'
-      ]);
+const cacheName = "tictac-cache-v1";
+const filesToCache = [
+  "/",
+  "/index.html",
+  "/style.css",
+  "/script.js",
+  "/manifest.json",
+  "/icon-192.png",
+  "/icon-512.png"
+];
+
+self.addEventListener("install", (event) => {
+  event.waitUntil(
+    caches.open(cacheName).then((cache) => {
+      return cache.addAll(filesToCache);
     })
   );
 });
 
-self.addEventListener('fetch', function(e) {
-  e.respondWith(
-    caches.match(e.request).then(function(response) {
-      return response || fetch(e.request);
+self.addEventListener("fetch", (event) => {
+  event.respondWith(
+    caches.match(event.request).then((response) => {
+      return response || fetch(event.request);
     })
   );
 });
