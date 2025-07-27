@@ -2562,13 +2562,17 @@
                 backgroundMusic.pause();
             });
         });
+        if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('/service-worker.js').then(function (registration) {
+      console.log('ServiceWorker registered: ', registration);
+    }).catch(function (error) {
+      console.log('ServiceWorker registration failed: ', error);
+    });
+  });
+}
         
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./service-worker.js')
-    .then(() => console.log("Service Worker Registered"))
-    .catch(err => console.log("SW registration failed", err));
-  }
-
-    </script>
+  
+   </script>
 </body>
 </html>
