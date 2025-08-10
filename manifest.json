@@ -5,7 +5,7 @@
   "description": "Tic Tac Toe Game powered by PWA and GitHub Pages",
   "lang": "en",
   "dir": "ltr",
-  "start_url": ".",
+  "start_url": "./index.html",
   "display": "standalone",
   "display_override": ["standalone", "fullscreen"],
   "orientation": "portrait",
